@@ -27,7 +27,6 @@ public class ParkourCommand implements CommandExecutor {
 
     private ParkourChallenge plugin;
 
-    // this map is concurrent because it's used by PlayersTask as well
     @Getter
     private Map<OfflinePlayer, Parkour.ParkourBuilder> parkourBuilders;
 
