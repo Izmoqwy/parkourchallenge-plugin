@@ -87,9 +87,7 @@ public class ParkourCommand implements CommandExecutor {
                         parkourBuilder.spawnLocation(location);
                         break;
                     case "start":
-                        Parkour similarParkour = plugin.getParkourListener().getStartingLocations()
-                                .get(plugin.getParkourListener().toFloorVector(player.getLocation()));
-                        if (similarParkour != null) {
+                        if (plugin.getParkourListener().getStartingLocations().containsKey(plugin.getParkourListener().toFloorVector(player.getLocation()))) {
                             player.sendMessage(ChatColor.RED + "Another parkour starts here!");
                             return true;
                         }

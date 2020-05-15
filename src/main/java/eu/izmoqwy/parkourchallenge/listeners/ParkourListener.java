@@ -46,7 +46,7 @@ public class ParkourListener implements Listener {
     -> results in better performances
      */
     @Getter
-    private Map<Vector, Parkour> startingLocations;
+    private Map<Vector, Integer> startingLocations;
 
     public ParkourListener(ParkourChallenge plugin) {
         this.selectionItem = ItemBuilder.fresh()
@@ -220,7 +220,9 @@ public class ParkourListener implements Listener {
                     && !plugin.getParkourCommand().getParkourBuilders().containsKey(player)) {
                 // recalling toFloorVector here makes sense because this line will be reached less often
                 // than the checks so we may not want to set a variable when calling toFloorVector in the condition above
-                plugin.joinParkour(player, startingLocations.get(toFloorVector(player.getLocation())));
+                int parkourId = startingLocations.get(toFloorVector(player.getLocation()));
+                plugin.joinParkour(player, plugin.getParkourList().stream()
+                        .filter(parkour1 -> parkour1.getDatabaseId() == parkourId).findFirst().orElse(null));
             }
         }
     }

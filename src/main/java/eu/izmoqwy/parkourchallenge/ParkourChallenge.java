@@ -230,7 +230,7 @@ public final class ParkourChallenge extends JavaPlugin {
         for (int x = -1; x <= 1; x++) {
             for (int y = -1; y <= 1; y++) {
                 for (int z = -1; z <= 1; z++) {
-                    parkourListener.getStartingLocations().put(toFloorVector(startLocation, x, y, z), parkour);
+                    parkourListener.getStartingLocations().put(toFloorVector(startLocation, x, y, z), parkour.getDatabaseId());
                 }
             }
         }
