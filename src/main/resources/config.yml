@@ -1,0 +1,8 @@
+database:
+  tables-prefix: ''
+  mysql:
+    host: localhost
+    port: 3306
+    database: parkours
+    username: root
+    password: root

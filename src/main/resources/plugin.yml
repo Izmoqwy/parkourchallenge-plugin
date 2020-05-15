@@ -1,0 +1,13 @@
+name: ParkourChallenge
+version: ${project.version}
+author: Izmoqwy
+
+main: eu.izmoqwy.parkourchallenge.ParkourChallenge
+commands:
+  parkour:
+    description: Parkour creation command
+    permission: parkourchallenge.command
+permissions:
+  parkourchallenge.command:
+    description: Gives access to the parkour creation command
+    default: op
